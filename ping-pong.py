@@ -44,10 +44,17 @@ class Player(GameSprite):
         if keys[K_DOWN] and self.rect.y < 420:
             self.rect.y += self.speed
 
+racket1 = Player('enemy.png', 5, 200, 30, 60, 10)
+racket2 = Player('enemy.png', 650, 300, 30, 60, 10)
+ball = GameSprite('ufo.png', 100, 300, 50, 50, 10)
+
 run = True
 finish = False
 while run:
     win.blit(background, (0, 0))
+    racket1.reset()
+    racket2.reset()
+    ball.reset()
     for e in event.get():
         if e.type == QUIT:
             run = False
